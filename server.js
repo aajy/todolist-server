@@ -68,6 +68,6 @@ app.delete('/todos/:id', (req, res) => {
 	res.send(todos);
 });
 
-const baseURL = process.env.BASE_URL || 'http://localhost:7000';
+const port = '7000';
 
-app.listen(baseURL, console.log(`Server running on port ${baseURL}`.green.bold));
+app.listen(port, console.log(`Server running on port ${port}`.green.bold));
