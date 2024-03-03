@@ -39,7 +39,7 @@ let todos = [
 		completed: false,
 	},
 ];
-
+app.get('/', (req, res) => res.send('Welcome to the Todo API'));
 app.get('/todos', (req, res) => res.send(todos));
 
 app.post('/todos', (req, res) => {
@@ -68,6 +68,6 @@ app.delete('/todos/:id', (req, res) => {
 	res.send(todos);
 });
 
-const PORT = 7000;
+const baseURL = process.env.BASE_URL || 'http://localhost:7000';
 
-app.listen(PORT, console.log(`Server running on port ${PORT}`.green.bold));
+app.listen(baseURL, console.log(`Server running on port ${baseURL}`.green.bold));
